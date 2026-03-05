@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从微服务到单体架构：亚马逊 Prime Video 案例深度解析 | 新怡智健的博客</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="prompt">$</span> 新怡智健的博客
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">首页</a>
+                <a href="../posts.html">文章</a>
+                <a href="../about.html">关于</a>
+                <button class="theme-toggle" id="themeToggle" title="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <article>
+                <header class="article-header">
+                    <h1 class="article-title">从微服务到单体架构：亚马逊 Prime Video 案例深度解析</h1>
+                    <div class="article-meta">
+                        <time datetime="2024-01-15">2024-01-15</time>
+                        <span class="post-category">架构设计</span>
+                        <span class="post-readtime">阅读 8 分钟</span>
+                        <span class="post-views">👁 1,234 次阅读</span>
+                    </div>
+                </header>
+
+                <div class="article-content">
+                    <p>这两天技术圈里热议的一件事就是 Amazon 的流媒体平台 Prime Video 在 2023 年 3 月 22 日发布了一篇技术博客《规模化 Prime Video 的音视频监控服务，成本降低 90%》。这篇文章的副标题是："从分布式微服务架构到单体应用程序的转变有助于实现更高的规模、弹性和降低成本"。</p>
+
+                    <p>有人把这篇文章转到了 Reddit 和 Hacker News 上，瞬间引发了热议。这种话题与业内推崇的微服务架构形成了鲜明的对比。从"微服务架构"转"单体架构"，还是 Amazon 干的，这个话题足够劲爆。</p>
+
+                    <h2>事件回顾</h2>
+
+                    <p>Prime Video 团队构建了一个用于监控音视频流质量的工具。最初，他们采用了典型的微服务架构：</p>
+
+                    <ul>
+                        <li>多个 Lambda 函数处理不同的任务</li>
+                        <li>使用 Step Functions 编排工作流</li>
+                        <li>S3 用于存储中间结果</li>
+                        <li>SQS 用于任务队列</li>
+                    </ul>
+
+                    <p>然而，随着规模扩大，他们遇到了几个严重问题：</p>
+
+                    <h3>1. 成本问题</h3>
+
+                    <p>每个视频流都需要调用多个 Lambda 函数，处理成千上万个流时，成本呈指数级增长。S3 的频繁读写也产生了可观的费用。</p>
+
+                    <h3>2. 延迟问题</h3>
+
+                    <p>Step Functions 的状态转换有延迟限制，处理一个视频需要多次状态转换，累积起来导致整体延迟过高。</p>
+
+                    <h3>3. 复杂度问题</h3>
+
+                    <p>调试分布式系统非常困难，一个问题可能涉及多个服务，日志分散在各个地方，排查问题耗时巨大。</p>
+
+                    <h2>重构方案</h2>
+
+                    <p>团队决定将系统重构为单体架构。具体的改动包括：</p>
+
+                    <pre><code>// 重构前的架构示意
+VideoStream
+    ├── Lambda: ExtractFrames
+    ├── S3: StoreFrames
+    ├── Lambda: AnalyzeQuality
+    ├── SQS: TaskQueue
+    └── Step Functions: Orchestration
+
+// 重构后的架构示意
+VideoStream
+    └── MonolithicService (ECS/EKS)
+        ├── FrameExtractor
+        ├── QualityAnalyzer
+        └── ResultAggregator</code></pre>
+
+                    <p>他们将所有处理逻辑整合到一个进程中，部署在 ECS 上。中间结果存储在内存中，避免了频繁的 S3 访问。</p>
+
+                    <h2>成果与反思</h2>
+
+                    <p>重构后的效果显著：</p>
+
+                    <ul>
+                        <li>✅ 成本降低 90%</li>
+                        <li>✅ 延迟大幅降低</li>
+                        <li>✅ 代码更易理解和维护</li>
+                        <li>✅ 调试变得简单</li>
+                    </ul>
+
+                    <blockquote>
+                        "微服务不是目标，而是手段。架构决策应该基于实际需求和约束，而不是盲目追随趋势。"
+                    </blockquote>
+
+                    <h2>我的观点</h2>
+
+                    <p>这个案例给我们几个重要的启示：</p>
+
+                    <p><strong>1. 架构没有银弹</strong> - 微服务适合某些场景，但不适合所有场景。对于处理大量数据、需要高吞吐量的系统，简单的单体架构可能更合适。</p>
+
+                    <p><strong>2. 从简单开始</strong> - 如果系统不复杂，不要过早引入微服务。等到真正需要拆分时再拆分，那时的拆分会更合理。</p>
+
+                    <p><strong>3. 成本意识</strong> - Serverless 和微服务都有成本，需要仔细评估。有时候一台高配服务器比一个复杂的分布式系统更便宜。</p>
+
+                    <h2>总结</h2>
+
+                    <p>Amazon Prime Video 的案例并不是反对微服务，而是提醒我们要根据实际情况做架构决策。微服务和单体架构各有优劣，关键是理解它们适用的场景。</p>
+
+                    <p>技术圈需要更多这样坦诚分享的案例，而不是盲目跟风。</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 新怡智健的博客. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                    <a href="mailto:your@email.com">Email</a>
+                    <a href="../rss.xml">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

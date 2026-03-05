@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>新怡智健的博客</title>
+    <link>https://your-domain.com</link>
+    <description>思考 · 记录 · 分享 - 探索技术边界，记录成长轨迹</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Jan 2024 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>从微服务到单体架构：亚马逊 Prime Video 案例深度解析</title>
+      <link>https://your-domain.com/posts/post-1.html</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0800</pubDate>
+      <description>亚马逊 Prime Video 团队最近发布了一篇技术博客，分享他们如何将音视频监控服务从分布式微服务架构迁移到单体架构，并实现了 90% 的成本降低...</description>
+      <category>架构设计</category>
+    </item>
+    <item>
+      <title>ChatGPT 时代，程序员还需要学习算法吗？</title>
+      <link>https://your-domain.com/posts/post-2.html</link>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 +0800</pubDate>
+      <description>随着 AI 编程助手的普及，很多人开始质疑传统计算机科学基础的重要性...</description>
+      <category>技术思考</category>
+    </item>
+    <item>
+      <title>eBPF：Linux 可观测性的革命</title>
+      <link>https://your-domain.com/posts/post-3.html</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0800</pubDate>
+      <description>eBPF 正在改变我们监控和调试 Linux 系统的方式...</description>
+      <category>Linux</category>
+    </item>
+  </channel>
+</rss>

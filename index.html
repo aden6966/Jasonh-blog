@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新怡智健 | 技术随想录</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise"></div>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">~</span>
+                    <span class="logo-text">新怡智健</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link active">随想</a>
+                    <a href="thoughts.html" class="nav-link">归档</a>
+                    <a href="about.html" class="nav-link">关于</a>
+                    <button class="theme-btn" id="themeToggle">◐</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- 个人签名 -->
+            <section class="hero">
+                <p class="hero-tagline">// 记录思考的痕迹</p>
+                <h1 class="hero-title">在代码与文字之间<br>寻找生活的诗意</h1>
+                <p class="hero-desc">
+                    这里是我的数字花园，种植着技术思考、生活感悟、<br>
+                    读书心得，以及那些突然冒出来的奇怪想法。
+                </p>
+            </section>
+
+            <!-- 最新随想 -->
+            <section class="thoughts">
+                <div class="section-header">
+                    <span class="section-tag">latest</span>
+                    <h2>最新随想</h2>
+                </div>
+
+                <article class="thought-card">
+                    <div class="thought-meta">
+                        <time class="thought-date">2026.03.05</time>
+                        <span class="thought-mood">🌙 深夜有感</span>
+                    </div>
+                    <h3 class="thought-title">
+                        <a href="posts/thought-1.html">关于"日报"这件事的思考</a>
+                    </h3>
+                    <div class="thought-content">
+                        <p>今天让 AI 帮我设置了一个定时任务，每天早上9点自动抓取 AI 资讯发给我。突然想到，我们这一代人正在经历一个有趣的时代——人类和 AI 协作的方式正在发生微妙的变化...</p>
+                    </div>
+                    <div class="thought-footer">
+                        <a href="posts/thought-1.html" class="read-more">继续阅读 →</a>
+                        <span class="word-count">1,256 字</span>
+                    </div>
+                </article>
+
+                <article class="thought-card">
+                    <div class="thought-meta">
+                        <time class="thought-date">2026.03.04</time>
+                        <span class="thought-mood">☕ 午后随笔</span>
+                    </div>
+                    <h3 class="thought-title">
+                        <a href="posts/thought-2.html">为什么我想写博客</a>
+                    </h3>
+                    <div class="thought-content">
+                        <p>在这个信息过载的时代，为什么还要写博客？我想了很久。也许答案很简单：这是属于我自己的空间，不受算法推荐影响，不用在意点赞数，只是纯粹的表达...</p>
+                    </div>
+                    <div class="thought-footer">
+                        <a href="posts/thought-2.html" class="read-more">继续阅读 →</a>
+                        <span class="word-count">892 字</span>
+                    </div>
+                </article>
+
+                <article class="thought-card">
+                    <div class="thought-meta">
+                        <time class="thought-date">2026.03.02</time>
+                        <span class="thought-mood">💡 技术思考</span>
+                    </div>
+                    <h3 class="thought-title">
+                        <a href="posts/thought-3.html">从微服务到单体：架构没有银弹</a>
+                    </h3>
+                    <div class="thought-content">
+                        <p>亚马逊 Prime Video 团队最近分享了他们将服务从微服务迁移回单体架构的经历，成本降低了90%。这再次证明了一个道理：技术选型没有绝对的好坏，只有适合不适合...</p>
+                    </div>
+                    <div class="thought-footer">
+                        <a href="posts/thought-3.html" class="read-more">继续阅读 →</a>
+                        <span class="word-count">2,104 字</span>
+                    </div>
+                </article>
+
+                <article class="thought-card">
+                    <div class="thought-meta">
+                        <time class="thought-date">2026.02.28</time>
+                        <span class="thought-mood">📚 读书笔记</span>
+                    </div>
+                    <h3 class="thought-title">
+                        <a href="posts/thought-4.html">《黑客与画家》重读有感</a>
+                    </h3>
+                    <div class="thought-content">
+                        <p>时隔五年重读这本书，有了完全不同的感受。当年关注的技术细节，现在更看重的是 Paul Graham 思考问题的方式——那种对"好"的执着追求...</p>
+                    </div>
+                    <div class="thought-footer">
+                        <a href="posts/thought-4.html" class="read-more">继续阅读 →</a>
+                        <span class="word-count">1,567 字</span>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 标签云 -->
+            <section class="tags-section">
+                <h3 class="tags-title"># 标签</h3>
+                <div class="tags-cloud">
+                    <a href="#" class="tag">技术思考</a>
+                    <a href="#" class="tag">生活随笔</a>
+                    <a href="#" class="tag">读书笔记</a>
+                    <a href="#" class="tag">AI</a>
+                    <a href="#" class="tag">架构设计</a>
+                    <a href="#" class="tag">深夜树洞</a>
+                    <a href="#" class="tag">编程</a>
+                    <a href="#" class="tag">随想</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-text">
+                    <span class="prompt">$</span> echo "Stay curious, stay foolish."
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                    <a href="mailto:your@email.com">Email</a>
+                    <a href="rss.xml">RSS</a>
+                </div>
+                <p class="copyright">© 2026 新怡智健 · 用 ❤️ 和代码构建</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

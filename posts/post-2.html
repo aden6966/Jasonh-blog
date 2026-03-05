@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT 时代，程序员还需要学习算法吗？ | 新怡智健的博客</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="prompt">$</span> 新怡智健的博客
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">首页</a>
+                <a href="../posts.html">文章</a>
+                <a href="../about.html">关于</a>
+                <button class="theme-toggle" id="themeToggle" title="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <article>
+                <header class="article-header">
+                    <h1 class="article-title">ChatGPT 时代，程序员还需要学习算法吗？</h1>
+                    <div class="article-meta">
+                        <time datetime="2024-01-10">2024-01-10</time>
+                        <span class="post-category">技术思考</span>
+                        <span class="post-readtime">阅读 6 分钟</span>
+                        <span class="post-views">👁 892 次阅读</span>
+                    </div>
+                </header>
+
+                <div class="article-content">
+                    <p>随着 AI 编程助手（GitHub Copilot、ChatGPT、Claude 等）的普及，一个问题开始在程序员圈子里讨论："算法和数据结构这些基础还有必要学吗？"</p>
+
+                    <p>毕竟，现在只需要描述一下问题，AI 就能给出代码实现。为什么还要花时间去理解时间复杂度、空间复杂度、各种排序算法呢？</p>
+
+                    <h2>AI 能做什么？</h2>
+
+                    <p>首先，让我们诚实地说，AI 确实很强大：</p>
+
+                    <ul>
+                        <li>✅ 生成标准算法的实现代码</li>
+                        <li>✅ 解释算法的工作原理</li>
+                        <li>✅ 优化代码的性能</li>
+                        <li>✅ 调试和修复 bug</li>
+                    </ul>
+
+                    <p>对于日常的开发工作，比如实现一个排序功能、找一个子串、遍历树结构，AI 都能很好地完成。</p>
+
+                    <h2>AI 不能做什么？</h2>
+
+                    <p>但是，AI 也有明显的局限性：</p>
+
+                    <h3>1. 无法做架构决策</h3>
+
+                    <p>当你在系统设计时面临选择：应该用哈希表还是树？数据量多大时需要分片？缓存策略如何设计？这些问题需要你对数据结构的特性有深入理解。</p>
+
+                    <pre><code>// AI 可以写出这段代码
+function findUser(users, id) {
+    return users.find(u => u.id === id);
+}
+
+// 但 AI 不会告诉你：
+// - 当 users 有 100 万条时，这段代码的性能如何？
+// - 是否应该使用 Map/哈希表来优化？
+// - 查询模式是怎样的？是否需要索引？</code></pre>
+
+                    <h3>2. 无法识别隐藏的性能问题</h3>
+
+                    <p>AI 生成的代码往往是"能用"的，但不一定是"最优"的。如果你不理解算法复杂度，你可能意识不到代码潜在的性能问题。</p>
+
+                    <h3>3. 无法解决新颖的问题</h3>
+
+                    <p>AI 的知识来自于训练数据。对于全新的、独特的业务问题，AI 可能给出看似合理但实际上错误的方案。这时候你需要用自己的判断力来验证。</p>
+
+                    <h2>为什么还要学习算法？</h2>
+
+                    <p>学习算法的目的不是背下各种排序算法的实现，而是培养以下几种能力：</p>
+
+                    <p><strong>1. 抽象思维能力</strong> - 算法训练你把复杂问题分解为可管理的部分，识别模式和结构。</p>
+
+                    <p><strong>2. 性能直觉</strong> - 让你能够估算代码的运行时间和内存使用，在设计阶段就避免性能陷阱。</p>
+
+                    <p><strong>3. 工具选择能力</strong> - 理解不同数据结构的优缺点，在正确的场景使用正确的工具。</p>
+
+                    <p><strong>4. 调试和优化能力</strong> - 当系统出现问题时，你需要理解底层原理才能找到根因。</p>
+
+                    <h2>我的建议</h2>
+
+                    <p><strong>把 AI 当作助手，而不是替代品。</strong></p>
+
+                    <ul>
+                        <li>用 AI 来快速生成代码草稿</li>
+                        <li>用 AI 来学习新的概念（但要验证）</li>
+                        <li>用 AI 来优化已有代码</li>
+                    </ul>
+
+                    <p>但是，核心能力还是要自己掌握：</p>
+
+                    <ul>
+                        <li>✓ 理解算法复杂度（大 O 表示法）</li>
+                        <li>✓ 掌握常用数据结构的特点和应用场景</li>
+                        <li>✓ 培养解决复杂问题的思路</li>
+                    </ul>
+
+                    <h2>结论</h2>
+
+                    <p>算法和数据结构是程序员的基本功，就像数学是物理学的基础一样。AI 可以让你的工作更高效，但它不能替代你的理解和判断。</p>
+
+                    <blockquote>
+                        "AI 给你答案，但理解让你知道问什么问题。"
+                    </blockquote>
+
+                    <p>在这个 AI 时代，学习算法的方式可能需要调整——更注重理解原理而不是死记硬背，更注重应用场景而不是孤立的知识点。但学习本身，依然必要。</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 新怡智健的博客. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                    <a href="mailto:your@email.com">Email</a>
+                    <a href="../rss.xml">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

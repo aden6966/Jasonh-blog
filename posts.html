@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章列表 | 新怡智健的博客</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="prompt">$</span> 新怡智健的博客
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">首页</a>
+                <a href="posts.html" class="active">文章</a>
+                <a href="about.html">关于</a>
+                <button class="theme-toggle" id="themeToggle" title="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <section class="hero" style="padding: 32px 0 40px;">
+                <h1>文章归档</h1>
+                <p class="subtitle">共 3 篇文章，持续更新中...</p>
+            </section>
+
+            <section class="post-list">
+                <article class="post-item">
+                    <h3 class="post-title">
+                        <a href="posts/post-1.html">从微服务到单体架构：亚马逊 Prime Video 案例深度解析</a>
+                    </h3>
+                    <div class="post-meta">
+                        <time datetime="2024-01-15">2024-01-15</time>
+                        <span class="post-category">架构设计</span>
+                        <span class="post-readtime">阅读 8 分钟</span>
+                    </div>
+                    <div class="post-excerpt">
+                        <p>亚马逊 Prime Video 团队最近发布了一篇技术博客，分享他们如何将音视频监控服务从分布式微服务架构迁移到单体架构，并实现了 90% 的成本降低...</p>
+                    </div>
+                    <div class="post-footer">
+                        <a href="posts/post-1.html" class="read-more">阅读全文 →</a>
+                        <span class="post-views">👁 1,234 次阅读</span>
+                    </div>
+                </article>
+
+                <article class="post-item">
+                    <h3 class="post-title">
+                        <a href="posts/post-2.html">ChatGPT 时代，程序员还需要学习算法吗？</a>
+                    </h3>
+                    <div class="post-meta">
+                        <time datetime="2024-01-10">2024-01-10</time>
+                        <span class="post-category">技术思考</span>
+                        <span class="post-readtime">阅读 6 分钟</span>
+                    </div>
+                    <div class="post-excerpt">
+                        <p>随着 AI 编程助手的普及，很多人开始质疑传统计算机科学基础的重要性。本文从实际工程角度出发，探讨在这个新时代，算法和数据结构对于程序员的意义...</p>
+                    </div>
+                    <div class="post-footer">
+                        <a href="posts/post-2.html" class="read-more">阅读全文 →</a>
+                        <span class="post-views">👁 892 次阅读</span>
+                    </div>
+                </article>
+
+                <article class="post-item">
+                    <h3 class="post-title">
+                        <a href="posts/post-3.html">eBPF：Linux 可观测性的革命</a>
+                    </h3>
+                    <div class="post-meta">
+                        <time datetime="2024-01-05">2024-01-05</time>
+                        <span class="post-category">Linux</span>
+                        <span class="post-readtime">阅读 12 分钟</span>
+                    </div>
+                    <div class="post-excerpt">
+                        <p>eBPF 正在改变我们监控和调试 Linux 系统的方式。从网络过滤到性能分析，从安全审计到可观测性，eBPF 提供了一种安全、高效的内核编程范式...</p>
+                    </div>
+                    <div class="post-footer">
+                        <a href="posts/post-3.html" class="read-more">阅读全文 →</a>
+                        <span class="post-views">👁 2,156 次阅读</span>
+                    </div>
+                </article>
+            </section>
+
+            <div class="pagination">
+                <span class="page-info">第 1 页 / 共 1 页</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 新怡智健的博客. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                    <a href="mailto:your@email.com">Email</a>
+                    <a href="rss.xml">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
