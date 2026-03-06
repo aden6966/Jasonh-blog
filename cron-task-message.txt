@@ -1,0 +1,36 @@
+每天中午12点自动从AI科技网站获取最新新闻，撰写科技博客文章并发布到GitHub
+
+任务步骤：
+1. 使用 Tavily 搜索最新AI/科技新闻：
+   node C:\Users\Jason\.openclaw\workspace-xhsmedia\skills\tavily-search\scripts\search.mjs "AI人工智能最新动态" -n 10 --topic news
+   
+2. 从搜索结果中选择最热门的话题（通常相关性>80%的新闻）
+
+3. 如需深入了解某个话题，使用 extract 工具：
+   node C:\Users\Jason\.openclaw\workspace-xhsmedia\skills\tavily-search\scripts\extract.mjs "文章URL"
+
+4. 参考 blog/posts/thought-4.html 的格式，撰写一篇中文科技博客（1500-2500字），包含：
+   - 吸引人的标题
+   - 核心内容解读（基于搜索结果）
+   - 个人观点或思考
+   - 结语
+
+5. 生成新文章文件，命名格式：thought-YYYY-MM-DD.html（如 thought-2026-03-06.html）
+
+6. 更新 blog/index.html：
+   - 在最新随想列表顶部添加新文章卡片
+   - 使用相同的 CSS 样式
+
+7. 推送到 GitHub：
+   cd blog
+   git add .
+   git commit -m "添加 [日期] AI新闻博客: [文章标题]"
+   git push origin main
+
+文章风格要求：
+- 简洁、有个人观点、技术但不晦涩
+- 基于真实搜索内容，不是虚构
+- 字数1500-2500字
+
+环境变量：
+- TAVILY_API_KEY 已配置，可直接使用

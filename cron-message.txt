@@ -1,0 +1,19 @@
+每天中午12点自动从AI科技网站获取最新新闻，撰写科技博客文章并发布到GitHub
+
+任务步骤：
+1. 使用Tavily搜索最新AI新闻（使用包装脚本，已内置API KEY）：
+   node blog/scripts/tavily-search.js "AI人工智能最新动态" -n 10 --topic news
+   
+2. 从搜索结果中选择最热门的话题
+
+3. 如需深入了解，使用：node blog/scripts/tavily-search.js "关键词" --deep
+
+4. 参考 blog/posts/thought-4.html 格式，撰写中文科技博客（1500-2500字）
+
+5. 生成 thought-YYYY-MM-DD.html 文件，更新 blog/index.html
+
+6. git add/commit/push 到 GitHub
+
+文章风格：简洁、有个人观点、技术但不晦涩
+使用 blog/scripts/tavily-search.js（API KEY已内置）
+完成后报告结果。
